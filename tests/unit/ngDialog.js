@@ -430,6 +430,17 @@ describe('ngDialog', function () {
       expect(elm.hasClass('ngdialog-second')).toEqual(false);
       expect(elm.hasClass('ngdialog-first')).toEqual(false);
     });
+
+    it('should properly clear the expected arrays on cleanupDetachedDialogs', function() {
+      expect(ngDialog.getOpenDialogs().length).toBe(2);
+      expect(ngDialog.getActiveBodyClasses().length).toBe(2);
+
+      ngDialog.cleanupDetachedDialogs();
+      flush();
+
+      expect(ngDialog.getOpenDialogs().length).toBe(0);
+      expect(ngDialog.getActiveBodyClasses().length).toBe(0);
+    });
   });
 
 });
