@@ -860,8 +860,17 @@
                         }
                     },
 
+                    cleanupDetachedDialogs: function() {
+                        openIdStack = [];
+                        activeBodyClasses = [];
+                    },
+
                     getOpenDialogs: function() {
                         return openIdStack;
+                    },
+
+                    getActiveBodyClasses: function() {
+                        return activeBodyClasses;
                     },
 
                     getDefaults: function () {
