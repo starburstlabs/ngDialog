@@ -863,6 +863,8 @@
                     cleanupDetachedDialogs: function() {
                         openIdStack = [];
                         activeBodyClasses = [];
+                        $elements.html.removeClass(this.getDefaults().bodyClassName);
+                        $elements.body.removeClass(this.getDefaults().bodyClassName);
                     },
 
                     getOpenDialogs: function() {
